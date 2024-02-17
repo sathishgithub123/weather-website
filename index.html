@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Courier New';
+            text-align: center;
+            background-image: url('https://img.freepik.com/free-photo/fog-dark-clouds-mountains_1204-503.jpg?w=996&t=st=1708168889~exp=1708169489~hmac=c2686cba0108c479160b0c8e41ae1de04b771cfb4aee0cf7bda0774a3f660e63');
+            color:black;
+            height: 100vh;
+            background-size: cover;
+
+        }
+
+        #weather-container {
+            margin-top: 50px;
+            height: 35vh;
+            width: 100vw;
+
+        }
+
+        #temperature {
+            font-size: 2em;
+            padding: 5px;
+        }
+
+        #description {
+            margin-top: 10px;
+            color: black;
+            font-size: 20px;
+        }
+
+        #city-input {
+            margin-top: 20px;
+            padding: 5px;
+            border-radius: 5px;
+            border-color: black;
+        }
+
+        #get-weather-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border-color: black;
+            background-color: #555;
+            color: #ffffff;
+        }
+    </style>
+    <title>Weather website</title>
+</head>
+
+<body>
+    <div id="weather-container">
+        <h1>Current Weather</h1>
+        <input type="text" id="city-input" placeholder="Enter city">
+        <button id="get-weather-btn">Get Weather</button>
+        <div id="temperature"></div>
+        <div id="description"></div>
+    </div>
+
+    <script>
+        document.getElementById('get-weather-btn').addEventListener('click', getWeather);
+
+        function getWeather() {
+            const cityInput = document.getElementById('city-input');
+            const city = cityInput.value;
+
+            // Placeholder data (replace with actual API call)
+            const temperature = Math.floor(Math.random() * 30) + 1;
+            const description = 'Partly cloudy';
+
+            displayWeather(temperature, description);
+        }
+
+        function displayWeather(temperature, description) {
+            const temperatureDiv = document.getElementById('temperature');
+            const descriptionDiv = document.getElementById('description');
+
+            temperatureDiv.textContent = `${temperature}°C`;
+            descriptionDiv.textContent = description;
+        }
+    </script>
+</body>
+
+</html>
